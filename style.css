@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+* {
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #0c0c0e;
+    --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: white;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;  
+    height: 100vh;
+    position: relative;
+    background: radial-gradient(circle at center, #1a1a2e 0%, #0c0c0e 100%);
+}
+
+.square {
+    width: min(400px, 90%);
+    padding: 40px 20px;
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    transition: transform 0.3s ease;
+}
+
+.square:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+h1.title {
+    font-size: 28px;
+    font-weight: 800;
+    text-align: center;
+    background: var(--primary-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+}
+
+.buttons { 
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 20px;
+    z-index: 10;
+    transition: opacity 0.5s ease;
+}
+
+button {
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btnYes {
+    background: var(--primary-gradient);
+    color: white;
+    box-shadow: 0 10px 20px -5px rgba(168, 85, 247, 0.4);
+}
+
+.btnYes:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 15px 30px -5px rgba(168, 85, 247, 0.6);
+}
+
+.btnNo {
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--border-color);
+}
+
+.btnNo:hover {
+    background: rgba(255, 68, 68, 0.1);
+    color: #ff4444;
+    border-color: #ff4444;
+}
+
+.heart {
+    position: fixed; 
+    font-size: 32px;
+    user-select: none;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes heartAnimation {
+    0% {
+        transform: translateY(0) scale(0.5) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-200px) scale(1.5) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+footer {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ec4899;
+}
+
+::selection {
+    background-color: #ec4899;
+    color: white; 
+}
+
+/* Media Queries */
+@media (max-width: 480px) {
+    h1.title {
+        font-size: 22px;
+    }
+    .square {
+        padding: 30px 15px;
+    }
+    button {
+        padding: 10px 24px;
+        font-size: 14px;
+    }
+}
