@@ -30,7 +30,9 @@ Projeyi kendi bilgisayarınızda çalıştırmak için aşağıdaki adımları i
 
 ## 📸 Ekran Görüntüleri
 
-_(Buraya projenizden ekran görüntüleri ekleyebilirsiniz)_
+|           Başlangıç Ekranı            |         "EVET" Tıklandığında         |           "HAYIR" Kaçarken           |
+| :-----------------------------------: | :----------------------------------: | :----------------------------------: |
+| ![Ana Ekran](screenshots/initial.png) | ![Evet](screenshots/yes_clicked.png) | ![Hayır](screenshots/no_escaped.png) |
 
 ## 📝 Lisans
 
